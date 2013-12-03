@@ -1,0 +1,52 @@
+静态库
+动态库隐式调用
+动态库显式调用
+目录
+头文件
+Makefile
+分级make
+
+robot.c -- main
+actionType 全局变量 
+init 初始化过程 显式加载动态库
+
+main  wile switch 各种方式调用函数
+
+full
+wrong
+
+目录
+
+live.c -- eat drink  
+使用static静态变量
+调用robot.c的full
+
+live.h
+
+stat.c -- action 
+调用robot.c 全局变量
+stat.h
+
+
+动态库显式调用
+genius.so
+deps/hear.c
+deps/say.c
+dlopen("deps/genius.so", RTLD_NOW); 可以相对路径
+ -o Robot  -Llib -lstic lib/libdyna.so -ldl 需要连接dl库
+
+动态库隐式调用
+libdyna.so
+lib/walk.c
+lib/run.c
+命令 gcc -o Robot robot.o stat.o live.o -Llib -lstic lib/libdyna.so
+lib/libdyna.so 目录为相对于启动时所在路径
+ldd 查看动态库情况
+
+静态库
+libstic.a
+lib/sleep.c
+lib/sit.c
+命令 gcc -o Robot robot.o stat.o live.o -Llib -lstic
+
+
